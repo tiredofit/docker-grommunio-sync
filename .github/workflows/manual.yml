@@ -74,21 +74,21 @@ jobs:
         id: Label
         run: |
           if [ -f "Dockerfile" ] ; then
-            sed -i "/FROM .*/a LABEL tiredofit.grommunio-dav.git_repository=\"https://github.com/${GITHUB_REPOSITORY}\"" Dockerfile
-            sed -i "/FROM .*/a LABEL tiredofit.grommunio-dav.git_commit=\"${GITHUB_SHA}\"" Dockerfile
-            sed -i "/FROM .*/a LABEL tiredofit.grommunio-dav.git_committed_by=\"${GITHUB_ACTOR}\"" Dockerfile
-            sed -i "/FROM .*/a LABEL tiredofit.grommunio-dav.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile
+            sed -i "/FROM .*/a LABEL tiredofit.grommunio-sync.git_repository=\"https://github.com/${GITHUB_REPOSITORY}\"" Dockerfile
+            sed -i "/FROM .*/a LABEL tiredofit.grommunio-sync.git_commit=\"${GITHUB_SHA}\"" Dockerfile
+            sed -i "/FROM .*/a LABEL tiredofit.grommunio-sync.git_committed_by=\"${GITHUB_ACTOR}\"" Dockerfile
+            sed -i "/FROM .*/a LABEL tiredofit.grommunio-sync.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile
             if [ -f "CHANGELOG.md" ] ; then
-              sed -i "/FROM .*/a LABEL tiredofit.grommunio-dav.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile
+              sed -i "/FROM .*/a LABEL tiredofit.grommunio-sync.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile
               mkdir -p install/assets/.changelogs ; cp CHANGELOG.md install/assets/.changelogs/${GITHUB_REPOSITORY/\//_}.md
             fi
 
             if [[ $GITHUB_REF == refs/tags/* ]]; then
-              sed -i "/FROM .*/a LABEL tiredofit.grommunio-dav.git_tag=\"${GITHUB_REF#refs/tags/v}\"" Dockerfile
+              sed -i "/FROM .*/a LABEL tiredofit.grommunio-sync.git_tag=\"${GITHUB_REF#refs/tags/v}\"" Dockerfile
             fi
 
             if [[ $GITHUB_REF == refs/heads/* ]]; then
-              sed -i "/FROM .*/a LABEL tiredofit.grommunio-dav.git_branch=\"${GITHUB_REF#refs/heads/}\"" Dockerfile
+              sed -i "/FROM .*/a LABEL tiredofit.grommunio-sync.git_branch=\"${GITHUB_REF#refs/heads/}\"" Dockerfile
             fi
           fi
 
