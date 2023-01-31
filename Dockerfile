@@ -13,7 +13,7 @@ ENV GROMMUNIO_SYNC_VERSION=${GROMMUNIO_SYNC_VERSION:-"1.1"} \
     PHP_ENABLE_XML=TRUE \
     PHP_ENABLE_ZIP=TRUE
 
-ADD build-assets/ /build-assets
+COPY build-assets/ /build-assets
 
 RUN source /assets/functions/00-container && \
     set -ex && \
@@ -46,7 +46,7 @@ RUN source /assets/functions/00-container && \
     ### Cleanup and Compress Package
     echo "Gromunio Sync ${GROMMUNIO_SYNC_VERSION} built from ${GROMMUNIO_SYNC_REPO_URL} on $(date +'%Y-%m-%d %H:%M:%S')" > /rootfs/assets/.changelogs/grommunio-sync.version && \
     echo "Commit: $(cd /usr/src/grommunio-dav ; echo $(git rev-parse HEAD))" >> /rootfs/assets/.changelogs/grommunio-sync.version && \
-    env | grep GROMMUNIO | sort >> /rootfs/assets/.changelogs/grommunio-sync.version && \
+    env | grep ^GROMMUNIO | sort >> /rootfs/assets/.changelogs/grommunio-sync.version && \
     cd /rootfs/ && \
     find . -name .git -type d -print0|xargs -0 rm -rf -- && \
     mkdir -p /grommunio-sync/ && \

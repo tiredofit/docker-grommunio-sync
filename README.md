@@ -2,7 +2,6 @@
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/tiredofit/grommunio-sync.svg)](https://hub.docker.com/r/tiredofit/grommunio-sync)
 [![Docker Stars](https://img.shields.io/docker/stars/tiredofit/grommunio-sync.svg)](https://hub.docker.com/r/tiredofit/grommunio-sync)
-[![Docker Layers](https://images.microbadger.com/badges/image/tiredofit/grommunio-sync.svg)](https://microbadger.com/images/tiredofit/grommunio-sync)
 
 ## About
 
