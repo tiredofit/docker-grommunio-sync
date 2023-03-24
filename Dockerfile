@@ -1,12 +1,12 @@
 ARG DISTRO="alpine"
-ARG PHP_BASE=8.0
+ARG PHP_VERSION=8.2
 
-FROM docker.io/tiredofit/nginx-php-fpm:${DISTRO}-${PHP_BASE} as grommunio-sync-builder
+FROM docker.io/tiredofit/nginx-php-fpm:${PHP_VERSION}-${DISTRO} as grommunio-sync-builder
 LABEL maintainer="Dave Conroy (github.com/tiredofit)"
 
 ARG GROMMUNIO_SYNC_VERSION
 
-ENV GROMMUNIO_SYNC_VERSION=${GROMMUNIO_SYNC_VERSION:-"1.1"} \
+ENV GROMMUNIO_SYNC_VERSION=${GROMMUNIO_SYNC_VERSION:-"2.0"} \
     GROMMUNIO_SYNC_REPO_URL=${GROMMUNIO_SYNC_REPO_URL:-"https://github.com/grommunio/grommunio-sync.git"} \
     PHP_ENABLE_GETTEXT=TRUE \
     PHP_ENABLE_MBSTRING=TRUE \
