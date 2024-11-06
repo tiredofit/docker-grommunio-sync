@@ -1,3 +1,9 @@
+## 1.0.3 2024-11-06 <dave at tiredofit dot ca>
+
+   ### Changed
+      - Remove build folder and irrelevant grommunio-sync-top script
+
+
 ## 1.0.2 2024-10-30 <dave at tiredofit dot ca>
 
    ### Added

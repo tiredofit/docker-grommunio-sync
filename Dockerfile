@@ -38,6 +38,8 @@ RUN source /assets/functions/00-container && \
     \
     ### Move files to RootFS
     cp -Rp * /rootfs/www/grommunio-sync/ && \
+    rm -rf /rootfs/www/grommunio-sync/build && \
+    rm -rf /rootfs/www/grommunio-sync/grommunio-sync-top && \
     mv config.php /rootfs/assets/grommunio/config/sync/ && \
     ln -sf /etc/grommunio/sync.php config.php && \
     \
