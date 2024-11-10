@@ -1,3 +1,9 @@
+## 1.0.4 2024-11-10 <dave at tiredofit dot ca>
+
+   ### Added
+      - Grommunio Sync commit 5a64c0814cb20a0efe26994294d06bda4d45f82a
+
+
 ## 1.0.3 2024-11-06 <dave at tiredofit dot ca>
 
    ### Changed
