@@ -1,3 +1,9 @@
+## 1.0.5 2025-02-27 <dave at tiredofit dot ca>
+
+   ### Added
+      - Grommunio Sync 2.1
+
+
 ## 1.0.4 2024-11-10 <dave at tiredofit dot ca>
 
    ### Added
